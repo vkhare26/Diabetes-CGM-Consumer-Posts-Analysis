@@ -19,22 +19,23 @@ Handle missing values and exclude columns with over 90% missing data (e.g., rati
 
 ## Competition and Product Analysis:
 
-### Product Extraction: Identify mentions of CGM products (e.g., Dexcom, FreeStyle Libre, Medtronic, Senseonics) in Sound Bite and Title using keyword matching and regex.
+ Product Extraction: Identify mentions of CGM products (e.g., Dexcom, FreeStyle Libre, Medtronic, Senseonics) in Sound Bite and Title using keyword matching and regex.
 
-### Topic Modeling: Apply Latent Dirichlet Allocation (LDA) with sklearn to extract key attributes (e.g., accuracy, cost, app usability) for each product, using a document-term matrix from CountVectorizer (max 5,000 features, 5 topics).
+Topic Modeling: Apply Latent Dirichlet Allocation (LDA) with sklearn to extract key attributes (e.g., accuracy, cost, app usability) for each product, using a document-term matrix from CountVectorizer (max 5,000 features, 5 topics).
 
-### Attribute Sentiment: Analyze consumer preferences (e.g., liked: Dexcom accuracy, FreeStyle Libre affordability; disliked: Medtronic sensor reliability, FreeStyle Libre app issues) using custom sentiment analysis with RoBERTa (transformers) and compare with the dataset’s Sentiment column. Use TextBlob for cluster-level sentiment scoring.
+Attribute Sentiment: Analyze consumer preferences (e.g., liked: Dexcom accuracy, FreeStyle Libre affordability; disliked: Medtronic sensor reliability, FreeStyle Libre app issues) using custom sentiment analysis with RoBERTa (transformers) and compare with the dataset’s Sentiment column. Use TextBlob for cluster-level sentiment scoring.
 
-### Price, Performance, Accuracy, Quality, Value: Quantify sentiment for these attributes by keyword-based filtering and RoBERTa sentiment scoring.
+Price, Performance, Accuracy, Quality, Value: Quantify sentiment for these attributes by keyword-based filtering and RoBERTa sentiment scoring.
 
-### Twitter vs. Non-Twitter Analysis: Process Twitter and non-Twitter data separately to compare ease and accuracy (Twitter: real-time but noisy; non-Twitter: detailed but less timely).
-### Positive/Negative Objects: Attribute sentiment to specific objects (e.g., "sensor," "app") using keyword co-occurrence and validate against dataset columns (Positive Objects, Negative Objects).
+Twitter vs. Non-Twitter Analysis: Process Twitter and non-Twitter data separately to compare ease and accuracy (Twitter: real-time but noisy; non-Twitter: detailed but less timely).
+Positive/Negative Objects: Attribute sentiment to specific objects (e.g., "sensor," "app") using keyword co-occurrence and validate against dataset columns (Positive Objects, Negative Objects).
 
 
 ## Audience Analysis:
 
-### Demographic Profiling: Extract attributes like age (adult, child), gender, medical conditions (Type 1, Type 2, gestational diabetes), and professions/interests from Sound Bite, Title, Professions, and Interests columns using keyword matching and regex.
-### Diabetes Type Classification: Categorize authors by diabetes type (Type 1: 12,019 authors; Type 2: 503 authors) using explicit mentions (e.g., "T1D", "Type 2") and contextual keywords (e.g., "insulin pump" for Type 1, "metformin" for Type 2) via the classify_diabetes_type function.
+Demographic Profiling: Extract attributes like age (adult, child), gender, medical conditions (Type 1, Type 2, gestational diabetes), and professions/interests from Sound Bite, Title, Professions, and Interests columns using keyword matching and regex.
+
+Diabetes Type Classification: Categorize authors by diabetes type (Type 1: 12,019 authors; Type 2: 503 authors) using explicit mentions (e.g., "T1D", "Type 2") and contextual keywords (e.g., "insulin pump" for Type 1, "metformin" for Type 2) via the classify_diabetes_type function.
 ### Persona Creation: Develop 5-10 consumer segments (e.g., Dexcom Enthusiasts, FreeStyle Libre Users, Health-Conscious Generalists) via K-means clustering (5 clusters) on TF-IDF vectors, incorporating sentiment, engagement (author_reddit_karma), and influence (followers/daily_unique_visitors/subscribers).
 ### Influence Analysis: Analyze Reddit karma and followers to quantify author influence, binning followers into categories (Low, Medium, High, Very High).
 
